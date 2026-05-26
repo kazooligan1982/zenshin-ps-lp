@@ -207,6 +207,31 @@
     .nav-cta{padding:9px 14px;font-size:12px}
     .brand{font-size:18px}
   }
+  /* --- mobile typography tuning: smaller headings, graceful wrapping --- */
+  @media(max-width:560px){
+    h1{font-size:25px;line-height:1.7;letter-spacing:0}
+    h2{font-size:21px;line-height:1.7}
+    .lead{font-size:15px;line-height:2}
+    .body-lg{font-size:15px}
+    .metaphor{font-size:16px}
+    .fritz .quote{font-size:20px;line-height:1.85}
+    .wrap{padding:0 22px}
+    /* prevent a single trailing character from dropping to its own line */
+    h1,h2,.fritz .quote,.metaphor{
+      word-break:keep-all;          /* don't break inside a word/clause */
+      overflow-wrap:break-word;     /* but allow break if truly too long */
+      line-break:strict;
+    }
+    /* clause-level wrapping: each .ph wraps as a unit, not mid-phrase */
+    h1 .ph, h2 .ph, .fritz .quote .ph, .metaphor .ph{display:inline-block}
+    /* soften forced PC line breaks on small screens */
+    h2 br, .fritz .quote br, .metaphor br{display:none}
+  }
+  @media(max-width:390px){
+    h1{font-size:22px}
+    h2{font-size:19px}
+    .fritz .quote{font-size:18px}
+  }
 </style>
 </head>
 <body>
@@ -223,7 +248,7 @@
     <line x1="-40" y1="250" x2="1480" y2="560" stroke="#dcd6c8" stroke-width="1.2"/>
   </svg>
   <div class="wrap">
-    <h1 class="reveal">手に入れたはずのものが、<br>なぜか、また<span class="hl">手からこぼれていく</span>。<br>それは、意志ではなく「構造」の問題です。</h1>
+    <h1 class="reveal"><span class="ph">手に入れたはずのものが、</span><span class="ph">なぜか、また<span class="hl">手からこぼれていく</span>。</span><span class="ph">それは、意志ではなく「構造」の問題です。</span></h1>
     <p class="lead reveal"><b>ロバート・フリッツの構造力学にもとづく、個人のための ZENSHIN パーソナルセッション。</b><br>対話と分析を通じて、あなたの人生にある前進構造と葛藤構造を、ひとつの絵として明らかにします。繰り返しを生んでいる「嫌な思い込み」が脇に置かれたとき、人は本当に創り出したいものを創り出していけるようになります。その創造のスタート地点に立つまでを、ご一緒します。</p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScMiPT9PhF49VJRn4qerQtwJYPTTrStZWVdeEUdlFW1swSxsg/viewform" target="_blank" rel="noopener" class="btn reveal">お申込みフォームへ</a>
   </div>
@@ -240,7 +265,7 @@
 <!-- ===== 02 構造は2つ ===== -->
 <section class="tinted">
   <div class="wrap">
-    <h2 class="reveal">人生を動かす構造は、<br><span class="hl">たった2つしかありません。</span></h2>
+    <h2 class="reveal"><span class="ph">人生を動かす構造は、</span><span class="ph"><span class="hl">たった2つしかありません。</span></span></h2>
     <div class="struct-grid reveal">
       <div class="struct-card osc">
         <span class="tag">葛藤構造</span>
@@ -269,7 +294,7 @@
         <p>望み、行動し、手に入れて、終わる。成果が静かに積み上がっていく。構造そのものが、あなたを目的地へ運んでいく。</p>
       </div>
     </div>
-    <p class="metaphor reveal">違いは、乗っている人の努力ではありません。<br><b>乗り物の"構造"そのもの</b>です。</p>
+    <p class="metaphor reveal"><span class="ph">違いは、乗っている人の努力ではありません。</span><span class="ph"><b>乗り物の"構造"そのもの</b>です。</span></p>
   </div>
 </section>
 
@@ -371,7 +396,7 @@
 <!-- ===== Fritz band ===== -->
 <section class="dark fritz">
   <div class="wrap">
-    <p class="quote reveal">「人も組織も、"構造"が変われば、<br>自然と前へ進む。」</p>
+    <p class="quote reveal"><span class="ph">「人も組織も、"構造"が変われば、</span><span class="ph">自然と前へ進む。」</span></p>
     <div class="who reveal">— Robert Fritz</div>
     <p class="desc reveal">構造力学（Structural Dynamics）の創始者。『Creating』『The Path of Least Resistance』など世界的ベストセラーの著者。ZENSHIN は、その直弟子として学んだ原理を、一人ひとりの人生へと応用しています。</p>
   </div>

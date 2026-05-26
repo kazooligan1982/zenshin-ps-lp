@@ -88,6 +88,9 @@
   .btn:hover{background:var(--teal);transform:translateY(-2px);box-shadow:0 18px 36px -16px rgba(42,157,140,.55)}
   .btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--navy);box-shadow:none}
   .btn.ghost:hover{background:var(--navy);color:#fff}
+  /* CTA on dark sections: teal so it reads clearly as a button */
+  .dark .btn{background:var(--teal);box-shadow:0 14px 30px -14px rgba(42,157,140,.7)}
+  .dark .btn:hover{background:#238576;transform:translateY(-2px)}
 
   /* ---------- section scaffolding ---------- */
   section{padding:92px 0;position:relative}
@@ -209,26 +212,27 @@
   }
   /* --- mobile typography tuning: smaller headings, graceful wrapping --- */
   @media(max-width:560px){
-    h1{font-size:25px;line-height:1.7;letter-spacing:0}
-    h2{font-size:21px;line-height:1.7}
+    h1{font-size:24px;line-height:1.7;letter-spacing:0}
+    h2{font-size:20px;line-height:1.7}
     .lead{font-size:15px;line-height:2}
     .body-lg{font-size:15px}
     .metaphor{font-size:16px}
-    .fritz .quote{font-size:20px;line-height:1.85}
+    .fritz .quote{font-size:19px;line-height:1.85}
     .wrap{padding:0 22px}
-    /* prevent a single trailing character from dropping to its own line */
+    /* allow normal wrapping; phrases break between clauses, never overflow */
     h1,h2,.fritz .quote,.metaphor{
-      word-break:keep-all;          /* don't break inside a word/clause */
-      overflow-wrap:break-word;     /* but allow break if truly too long */
-      line-break:strict;
+      overflow-wrap:break-word;
+      word-break:normal;
     }
-    /* clause-level wrapping: each .ph wraps as a unit, not mid-phrase */
-    h1 .ph, h2 .ph, .fritz .quote .ph, .metaphor .ph{display:inline-block}
-    /* soften forced PC line breaks on small screens */
-    h2 br, .fritz .quote br, .metaphor br{display:none}
+    /* each clause is a wrap unit BUT may itself wrap if too long for the screen */
+    h1 .ph, h2 .ph, .fritz .quote .ph, .metaphor .ph{
+      display:inline;
+    }
+    /* keep PC line breaks visible on mobile so clauses stack cleanly */
+    h1 br, h2 br, .fritz .quote br, .metaphor br{display:inline}
   }
   @media(max-width:390px){
-    h1{font-size:22px}
+    h1{font-size:21px}
     h2{font-size:19px}
     .fritz .quote{font-size:18px}
   }
@@ -248,7 +252,7 @@
     <line x1="-40" y1="250" x2="1480" y2="560" stroke="#dcd6c8" stroke-width="1.2"/>
   </svg>
   <div class="wrap">
-    <h1 class="reveal"><span class="ph">手に入れたはずのものが、</span><span class="ph">なぜか、また<span class="hl">手からこぼれていく</span>。</span><span class="ph">それは、意志ではなく「構造」の問題です。</span></h1>
+    <h1 class="reveal"><span class="ph">手に入れたはずのものが、</span><br><span class="ph">なぜか、また<span class="hl">手からこぼれていく</span>。</span><br><span class="ph">それは、意志ではなく「構造」の問題です。</span></h1>
     <p class="lead reveal"><b>ロバート・フリッツの構造力学にもとづく、個人のための ZENSHIN パーソナルセッション。</b><br>対話と分析を通じて、あなたの人生にある前進構造と葛藤構造を、ひとつの絵として明らかにします。繰り返しを生んでいる「嫌な思い込み」が脇に置かれたとき、人は本当に創り出したいものを創り出していけるようになります。その創造のスタート地点に立つまでを、ご一緒します。</p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScMiPT9PhF49VJRn4qerQtwJYPTTrStZWVdeEUdlFW1swSxsg/viewform" target="_blank" rel="noopener" class="btn reveal">お申込みフォームへ</a>
   </div>
